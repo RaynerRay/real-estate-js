@@ -56,8 +56,9 @@ const Navbar = () => {
         </div>
         <div className="py-3 px-6 bg-gray-50 lg:py-3 lg:px-32 ">
           <div className="flex flex-wrap items-center justify-between">
-            <a className="text-gray-800 text-2xl leading-none" href="#">
-              <img className="h-8" src="nigodo-assets/logo/logo-light.svg" alt="" width="auto" />
+            <a className="text-gray-900 text-2xl font-bold leading-none" href="/">
+              {/* <img className="h-8" src="/logo.png" alt="" width="auto" /> */}
+               PropertyZim
             </a>
             <button
               className="block lg:hidden"
