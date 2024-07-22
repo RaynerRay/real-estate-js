@@ -8,7 +8,7 @@ import SearchResultsHeader from "@/components/uiItems/SearchResultsHeader";
 import { Grid, List } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
-const page = () => {
+const Page = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
 const handleScroll = () => {
@@ -151,7 +151,7 @@ useEffect(() => {
   );
 };
 
-export default page;
+export default Page;
 
 
 
