@@ -64,7 +64,7 @@ const Navbar = () => {
               className="block lg:hidden"
               onClick={() => setMobileNavOpen(!mobileNavOpen)}
             >
-              {mobileNavOpen ? <X className="h-8 w-8 text-gray-800" /> : <Menu className="h-8 w-8 text-gray-400" />}
+              {mobileNavOpen ? <X className="h-8 w-8 text-gray-800" /> : <Menu className="h-8 w-8 text-gray-500" />}
             </button>
             <div className={`lg:flex flex-grow items-center ${mobileNavOpen ? 'block' : 'hidden'}`}>
               <ul className="lg:flex flex-grow justify-center">
