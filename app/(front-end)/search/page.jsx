@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
-import FilterComponent from "@/components/frontend/Filter/FilterComponent";
+import FilterComponent from "@/components/frontend/filter/FilterComponent";
 import { getData } from "@/lib/getData";
 
 export default function Search({ searchParams }) {
