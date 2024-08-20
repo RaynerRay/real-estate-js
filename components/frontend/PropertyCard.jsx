@@ -65,49 +65,54 @@
 
 import React from 'react';
 import { Heart, MapPin, Bed, Bath, Move } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-const PropertyCard = ({ title, price, location, beds, baths, size, tags, image }) => {
+const PropertyCard = ({ title,slug, price, address, beds, baths, size, tags, imageUrl }) => {
   return (
     <div className="box-dream border p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <Link href={`/properties/${slug}`}>
       <div className="relative">
-        <div className="absolute top-2 left-2 space-x-2">
+        {/* <div className="absolute top-2 left-2 space-x-2">
           {tags && tags.map((tag, idx) => (
             <span key={idx} className="bg-gray-200 text-gray-700 px-2 py-1 rounded">
               {tag}
             </span>
           ))}
-        </div>
+        </div> */}
         <div className="absolute top-2 right-2">
           <Heart className="text-red-500 w-6 h-6" />
         </div>
+        
         <div className="h-64 bg-gray-300">
-          <img src={image} alt="" className="w-full h-64 object-cover" />
+          <Image height={500} width={500} src={imageUrl} alt="" className="w-full h-64 object-cover" />
         </div>
       </div>
       <div className="content mt-4">
         <div className="head flex justify-between items-center">
           <div className="title font-semibold text-lg text-gray-700">{title}</div>
-          <div className="price text-lg font-semibold text-indigo-600">{price}</div>
+          <div className="price text-lg font-semibold text-green-600">{price}</div>
         </div>
         <div className="location mt-2 flex items-center text-gray-500">
-          <MapPin className="w-4 h-4 mr-2" />
-          <p>{location}</p>
+          <MapPin className="w-4 h-4 mr-2 text-gray-800" />
+          <p>{address}</p>
         </div>
         <div className="icon-box mt-4 flex justify-between text-gray-500">
           <div className="item flex items-center">
-            <Bed className="w-4 h-4 mr-2" />
+            <Bed className="w-4 h-4 mr-2 text-gray-800" />
             <p>{beds} Beds</p>
           </div>
           <div className="item flex items-center">
-            <Bath className="w-4 h-4 mr-2" />
+            <Bath className="w-4 h-4 mr-2 text-gray-800" />
             <p>{baths} Baths</p>
           </div>
           <div className="item flex items-center">
-            <Move className="w-4 h-4 mr-2" />
+            <Move className="w-4 h-4 mr-2 text-gray-800" />
             <p>{size}</p>
           </div>
         </div>
       </div>
+      </Link>
     </div>
   );
 };

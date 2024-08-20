@@ -1,0 +1,244 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum ListingType {
+  SALE
+  RENT
+}
+
+model Category {
+  id            String        @id @default(auto()) @map("_id") @db.ObjectId
+  title         String
+  slug          String        @unique
+  properties    Property[]
+  subcategories SubCategory[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model SubCategory {
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  title      String
+  slug       String     @unique
+  properties Property[]
+
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId String   @db.ObjectId
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model Advert {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  link        String
+  imageUrl    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model City {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  slug        String     @unique
+  properties  Property[]
+  towns       Town[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model Town {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  slug        String     @unique
+  properties  Property[]
+  cities      City?      @relation(fields: [cityId], references: [id])
+  cityId      String     @db.ObjectId
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model Property {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  title         String
+  slug          String   @unique
+  imageUrl      String?
+  propertyImages String[]
+  description   String?
+  propertyCode   String?
+  contact   String?
+  listingType     ListingType
+
+  rentPrice     Float?
+  salePrice     Float?
+  size          Float?
+  beds          Int?
+  baths         Int?
+  tags   String[]
+
+  //amenities
+  water        String[]
+  electricity  String[]
+  sewerage     String[]
+  kitchen      String[]
+  bathroom     String[]
+  security     String[]
+  parking      String[]
+
+  //location
+  address   String?
+  latitude  Float?
+  longitude Float?
+
+  
+  cityId String  @db.ObjectId
+  city   City? @relation(fields: [cityId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+
+  townId String @db.ObjectId
+    town   Town? @relation(fields: [townId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  categoryId String  @db.ObjectId 
+  category   Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  
+  companyId String  @db.ObjectId
+  company   Company? @relation(fields: [companyId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  
+  subCategoryId String @db.ObjectId
+  subCategory   SubCategory? @relation(fields: [subCategoryId], references: [id])
+
+
+  userId String @db.ObjectId
+  user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+// model Amenity {
+//   id         String     @id @default(auto()) @map("_id") @db.ObjectId
+//   title      String
+//   properties Property[]
+
+
+
+//   createdAt DateTime  @default(now())
+//   updatedAt DateTime? @updatedAt
+// }
+
+model Blog {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  slug        String  @unique
+  imageUrl    String?
+  description String?
+  content     String?
+  isActive    Boolean
+
+  category  String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime? @updatedAt
+}
+
+enum UserRole {
+  ADMIN
+  USER
+  AGENT
+}
+
+// model Favorite {
+//   id         String   @id @default(auto()) @map("_id") @db.ObjectId
+//   createdAt  DateTime @default(now())
+
+//   user   User @relation(fields: [userId], references: [id])
+//   userId String   @db.ObjectId
+
+//   // properties   Property @relation(fields: [propertyId], references: [id])
+//   propertyId String   @db.ObjectId
+
+// }
+
+model User {
+  id                String        @id @default(auto()) @map("_id") @db.ObjectId
+  name              String?
+  email             String?       @unique
+  password          String
+  emailVerified     Boolean       @default(false)
+  properties        Property[]
+  // favorites         Favorite[]   
+  role              UserRole      @default(USER)
+  verificationToken String?
+  status            Boolean       @default(false)
+  agentProfile      AgentProfile?
+  profile           UserProfile? // Link to user profile
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
+// Model for normal user profile
+model UserProfile {
+  id           String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId       String  @unique @db.ObjectId
+  // Personal Details
+  firstName    String?
+  lastName     String?
+  email        String?
+  username     String?
+  phone        String?
+  profileImage String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Company {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  slug        String        @unique
+  imageUrl     String?
+  description String?
+  email String?
+  phone String?
+  phone2 String?
+  address String?
+  address2 String?
+  website String?
+  properties    Property[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model AgentProfile {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  profileImageUrl String?
+  firstName       String?
+  lastName        String?
+  email           String?
+  phone           String?
+  code String?
+  bio           String?
+  isActive        Boolean?
+  properties      String[]
+  services      String[]
+  // companyId       String   @db.ObjectId
+  // company         Company  @relation(fields: [companyId], references: [id])
+  companyName     String?
+  companyPhone   String?
+  companyAddress  String?
+  userId          String   @unique @db.ObjectId
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}

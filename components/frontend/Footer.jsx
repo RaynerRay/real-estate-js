@@ -78,7 +78,6 @@ const Footer = () => {
         <div className="pt-6">
           <div className="sm:flex items-center justify-between">
             <span className="inline-block mb-8 sm:mb-0 mr-2 text-gray-400">© Copyright 2024. All Rights Reserved.</span>
-            <img className="block" src="/vendia-assets/logos/brands/cards.png" alt="Payment Methods" />
           </div>
         </div>
       </div>
