@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, MapPin, Bed, Bath, Move } from 'lucide-react';
+import Image from 'next/image';
 
 const Listing = () => {
   const listings = [
@@ -67,7 +68,7 @@ const Listing = () => {
               <Heart className="text-red-500 w-6 h-6" />
             </div>
             <div className="h-64 bg-gray-300">
-            <img src={listing.image} alt=""  className="w-full h-64 object-cover" />
+            <Image height={500} width={500} src={listing.image} alt=""  className="w-full h-64 object-cover" />
             </div>
           </div>
           <div className="content mt-4">

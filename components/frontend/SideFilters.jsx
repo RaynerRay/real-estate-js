@@ -1,10 +1,25 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Accordion from './Accordion';
 
-const SideFilters = () => {
-  const [accordion, setAccordion] = useState({ category: false, delivery: false, size: false });
+const SideFilters = ({ similarLocations }) => {
+  const [accordion, setAccordion] = useState({ rent: false, sale: false });
+
+  const CityList = ({ towns, offerType }) => (
+    <ul className="space-y-2">
+      {towns.map((town) => (
+        <li key={town.slug}>
+          <Link href={`/search?location=${town.slug}&offer=${offerType}&category=`}>
+            <span className="px-4 text-gray-600 hover:text-green-600 transition-colors duration-200">
+              {town.title}
+            </span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <section className="pt-12 bg-white">
@@ -12,35 +27,19 @@ const SideFilters = () => {
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
             <Accordion
-              title="Category"
-              items={[
-                'Sport shoes',
-                'Sneakers',
-                'Special edition shoes',
-                'Summer specials',
-                'Jordan series',
-              ]}
-              isOpen={accordion.category}
-              onToggle={() => setAccordion({ ...accordion, category: !accordion.category })}
-            />
+              title="Nearby Locations For Renting"
+              isOpen={accordion.rent}
+              onToggle={() => setAccordion({ ...accordion, rent: !accordion.rent })}
+            >
+              <CityList towns={similarLocations} offerType="RENT" />
+            </Accordion>
             <Accordion
-              title="Delivery method"
-              items={[
-                'Personal collection',
-                'Courier delivery',
-                'Pickup at the point',
-                'Delivery abroad',
-                'Package',
-              ]}
-              isOpen={accordion.delivery}
-              onToggle={() => setAccordion({ ...accordion, delivery: !accordion.delivery })}
-            />
-            <Accordion
-              title="Size"
-              items={['Small', 'Medium', 'Large']}
-              isOpen={accordion.size}
-              onToggle={() => setAccordion({ ...accordion, size: !accordion.size })}
-            />
+              title="Nearby Locations for Buying"
+              isOpen={accordion.sale}
+              onToggle={() => setAccordion({ ...accordion, sale: !accordion.sale })}
+            >
+              <CityList towns={similarLocations} offerType="SALE" />
+            </Accordion>
           </div>
         </div>
       </div>

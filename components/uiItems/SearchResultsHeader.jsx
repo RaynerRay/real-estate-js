@@ -5,10 +5,10 @@ const SearchResultsHeader = ({ resultsCount, searchTerm }) => {
   return (
     <div className='flex justify-between my-4 '>
         <div className="">
-      <h1 className="font-heading text-gray-700 text-xl sm:text-3xl font-semibold">
-        Found {resultsCount} results for
+      <h1 className="font-heading text-gray-700 text-lg sm:text-2xl font-semibold">
+        Found <span className='text-gray-500'>{resultsCount} </span>listings
       </h1>
-      <p className="text-gray-500">{searchTerm}</p>
+      {/* <p className="text-gray-500">{searchTerm}</p> */}
       </div>
       
       <div className="flex gap-4 flex-wrap mt-4 ">
