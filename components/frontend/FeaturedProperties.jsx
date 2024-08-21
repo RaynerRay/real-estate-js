@@ -3,46 +3,7 @@ import React from 'react';
 import PropertyCard from './PropertyCard';
 
 const FeaturedProperties = ({properties}) => {
-  // const properties = [
-  //   {
-  //     image: '/house3.jpg',
-  //     tag: 'For Sale',
-  //     price: '$945,679',
-  //     title: 'Villa in Los Angeles',
-  //     location: 'Upper Road 3411, no.34 CA',
-  //     description: 'Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.',
-  //     newTag: true,
-  //     bathroom: '2',
-  //     garage: '2',
-  //     space: '120 sq ft'
-  //   },
-  //   {
-  //     image: '/house1.jpg',
-  //     tag: 'For Sale',
-  //     price: '$945,679',
-  //     title: 'Villa in Los Angeles',
-  //     location: 'Upper Road 3411, no.34 CA',
-  //     description: 'Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.',
-  //     newTag: true,
-  //     bathroom: '2',
-  //     garage: '2',
-  //     space: '120 sq ft'
-  //   },
-  //   {
-  //     image: '/house2.jpg',
-  //     tag: 'For Sale',
-  //     price: '$945,679',
-  //     title: 'Villa in Los Angeles',
-  //     location: 'Upper Road 3411, no.34 CA',
-  //     description: 'Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.',
-  //     newTag: true,
-  //     bathroom: '2',
-  //     garage: '2',
-  //     space: '120 sq ft'
-  //   },
-  //   // Add more properties here
-  // ];
-
+ console.log(properties)
   return (
     <div className="bg-gray-50 py-16">
     <div className="container max-w-6xl mx-auto px-4 py-2">
