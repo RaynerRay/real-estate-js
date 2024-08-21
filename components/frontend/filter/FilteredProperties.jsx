@@ -24,6 +24,7 @@ const FilteredProperties = ({
                 beds={property.beds}
                 baths={property.baths}
                 size={property.size}
+                slug={property.slug}
                 tags={property.tags}
                 imageUrl={property.imageUrl}
               />
