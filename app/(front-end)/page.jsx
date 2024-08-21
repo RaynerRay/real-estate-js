@@ -15,7 +15,7 @@ const page = async() => {
   const blogs = await getData("blogs");
   const towns = await getData("towns");
   const adverts = await getData("adverts");
-  const {properties} = await getData("properties");
+  const properties = await getData("properties");
   const session = await getServerSession(authOptions);
   return (
     <div >
