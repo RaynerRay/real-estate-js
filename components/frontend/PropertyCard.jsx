@@ -92,11 +92,12 @@ const PropertyCard = ({ title, slug, salePrice, rentPrice, address, beds, baths,
           <div className="title font-semibold text-md text-gray-700">{title}</div>
         
           <p className="text-sm font-semibold text-green-900">
-                  ${""}
-                  {rentPrice
-                    ? `${rentPrice.toLocaleString()}/month`
-                    : salePrice.toLocaleString()}
-                </p>
+  {rentPrice 
+    ? `${rentPrice.toLocaleString()}/month`
+    : salePrice
+      ? salePrice.toLocaleString()
+      : "Price not available"}
+</p>
         </div>
         <div className="flex justify-between">
         <div className="location mt-2 flex items-center text-gray-500">
