@@ -116,27 +116,27 @@ export default function RegisterForm({ role = "USER" }) {
           Already have an account?{" "}
           <Link
             href="/login"
-            className="font-medium text-purple-600 hover:underline dark:text-purple-500"
+            className="font-medium text-green-600 hover:underline dark:text-green-500"
           >
             Login
           </Link>
         </p>
         {role === "USER" ? (
           <p className="text-[0.75rem] font-light text-gray-500 dark:text-gray-400 py-4">
-            Are you an Agent ?{" "}
+            {/* Are you an Agent ?{" "}
             <Link
               href="/agent"
-              className="font-medium text-purple-600 hover:underline dark:text-purple-500"
+              className="font-medium text-green-600 hover:underline dark:text-green-500"
             >
               Register here
-            </Link>
+            </Link> */}
           </p>
         ) : (
           <p className="text-[0.75rem] font-light text-gray-500 dark:text-gray-400 py-4">
             Are you a User ?{" "}
             <Link
               href="/register"
-              className="font-medium text-purple-600 hover:underline dark:text-purple-500"
+              className="font-medium text-green-600 hover:underline dark:text-green-500"
             >
               Register here
             </Link>

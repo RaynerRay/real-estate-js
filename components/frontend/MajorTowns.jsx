@@ -16,16 +16,16 @@ const MajorTowns = ({towns}) => {
           {/* <h1 className="tracking-tight font-heading text-2xl md:text-3xl font-normal max-w-lg">Popular areas in Zimbabwe</h1> */}
         </div>
         <div className="w-full md:w-1/4 ">
-          <a href="#" className="group inline-block">
+          <Link href="/search" className="group inline-block">
             <div className="flex items-center text-sm sm:text-md text-gray-900 gap-2">
               <span className="font-semibold  group-hover:text-opacity-80 transition duration-200">
-                See All 
+                See All Listings
               </span>
               <div className=" group-hover:text-opacity-80 transition duration-200">
                 <ArrowRight size={17} />
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="flex flex-wrap -m-4 ">
@@ -35,9 +35,9 @@ const MajorTowns = ({towns}) => {
           <ul className="flex flex-col gap-1">
         {filteredHarare?.map((town) => (
           <li key={town.id}>
-            <a href={`/search?location=${town.slug}&offer=SALE&category=`} className="tracking-tight text-gray-800 hover:text-opacity-70 font-normal transition duration-200">
+            <Link href={`/search?location=${town.slug}&offer=SALE&category=`} className="tracking-tight text-gray-800 hover:text-opacity-70 font-normal transition duration-200">
               {town.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -47,9 +47,9 @@ const MajorTowns = ({towns}) => {
           <ul className="flex flex-col gap-1">
           {filteredHarare?.slice(1,2).map((town) => (
           <li key={town.id}>
-            <a href={`/search?location=${town.slug}&offer=SALE&category=`} className="tracking-tight text-gray-800 hover:text-opacity-70 font-normal transition duration-200">
+            <Link href={`/search?location=${town.slug}&offer=SALE&category=`} className="tracking-tight text-gray-800 hover:text-opacity-70 font-normal transition duration-200">
               {town.title}
-            </a>
+            </Link>
           </li>
         ))}
         </ul>

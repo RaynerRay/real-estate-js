@@ -21,15 +21,14 @@ export default function LoginForm() {
   const [loading, setLoading] = useState(false);
 
   async function onSubmit(data) {
-    console.log(data);
     try {
       setLoading(true);
-      console.log("Attempting to sign in with credentials:", data);
+      // console.log("Attempting to sign in with credentials:", data);
       const loginData = await signIn("credentials", {
         ...data,
         redirect: false,
       });
-      console.log("SignIn response:", loginData);
+      // console.log("SignIn response:", loginData);
       if (loginData?.error) {
         setLoading(false);
         toast.error("Sign-in error: Check your credentials");
@@ -60,8 +59,8 @@ export default function LoginForm() {
           type="email"
           name="email"
           id="email"
-          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="name@company.com"
+          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+          placeholder="name@gmail.com"
           required=""
         />
         {errors.email && (
@@ -83,7 +82,7 @@ export default function LoginForm() {
           name="password"
           id="password"
           placeholder="••••••••"
-          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
           required=""
         />
         {errors.password && (
@@ -95,7 +94,7 @@ export default function LoginForm() {
       <div className="flex gap-4 items-center">
         <Link
           href="/forgot-password"
-          className="shrink-0 font-medium text-blue-600 hover:underline dark:text-blue-500"
+          className="shrink-0 font-medium text-green-600 hover:underline dark:text-green-500"
         >
           Forgot Password
         </Link>
@@ -103,7 +102,7 @@ export default function LoginForm() {
           <button
             disabled
             type="button"
-            className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
+            className="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 inline-flex items-center"
           >
             <svg
               aria-hidden="true"
@@ -127,7 +126,7 @@ export default function LoginForm() {
         ) : (
           <button
             type="submit"
-            className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
           >
             Login
           </button>
@@ -138,7 +137,7 @@ export default function LoginForm() {
         Already have an account?{" "}
         <Link
           href="/register"
-          className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+          className="font-medium text-green-600 hover:underline dark:text-green-500"
         >
           Sign Up
         </Link>

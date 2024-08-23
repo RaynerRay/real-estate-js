@@ -7,6 +7,15 @@ export async function GET(request, { params: { id } }) {
       where: {
         id,
       },
+      include: {
+        user: {
+          select: {
+            id: true,
+            name: true,
+            agentProfile: true,  
+          },
+        },
+      },
     });
     return NextResponse.json(property);
   } catch (error) {

@@ -27,9 +27,8 @@ const Agents = ({ companies }) => {
                       <div className="w-auto p-1.5">
                         <h3 className="font-heading mb-1 font-semibold text-md">{company.title}</h3>
                         <Link
-                      className="inline-flex flex-wrap items-center px-3 py-1.5 text-sm text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-lg transition duration-300"
+                      className="inline-flex flex-wrap items-center px-3 py-1.5 text-sm text-gray-800 font-medium bg-gray-200/20 hover:bg-gray-200 rounded-lg transition duration-300"
                       href={`/companies/${company.slug}`}
-                      target="_blank"
                       rel="noopener noreferrer"
                     >
                       View Profile & Properties
