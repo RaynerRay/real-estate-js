@@ -7,6 +7,9 @@ export async function GET(request, { params: { slug } }) {
       where: {
         slug,
       },
+      include: {
+        properties: true,
+      },
     });
     return NextResponse.json(company);
   } catch (error) {

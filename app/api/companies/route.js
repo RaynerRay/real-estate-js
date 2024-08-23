@@ -41,9 +41,9 @@ export async function GET(request) {
       orderBy: {
         createdAt: "desc",
       },
-    //   include: {
-    //     properties: true,
-    //   },
+      // include: {
+      //   properties: true,
+      // },
     });
     return NextResponse.json(companies);
   } catch (error) {

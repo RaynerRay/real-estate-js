@@ -3,15 +3,15 @@
 import React, { useEffect, useState } from "react";
 import FilterComponent from "@/components/frontend/filter/FilterComponent";
 import { getData } from "@/lib/getData";
+import Loading from './../../loading';
 
 export default function Search({ searchParams }) {
-  // State to store properties, companies, total count, and towns
   const [properties, setProperties] = useState([]);
   const [companies, setCompanies] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [filteredTowns, setFilteredTowns] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); // Add loading state
 
-  // Destructure search and filter parameters from the query
   const {
     sort = "createdAt_desc",
     page = 1,
@@ -28,7 +28,6 @@ export default function Search({ searchParams }) {
     subCategory = "",
   } = searchParams;
 
-  // Construct the query string with search and filters
   const query = new URLSearchParams({
     sort,
     page,
@@ -45,50 +44,50 @@ export default function Search({ searchParams }) {
     subCategory,
   }).toString();
 
-  // Fetch properties and companies data on component mount
   useEffect(() => {
     async function fetchData() {
-      // Fetch filtered properties data
-      const { properties, totalCount } = await getData(`properties?${query}`);
-      setProperties(properties);
-      setTotalCount(totalCount);
+      setIsLoading(true); // Set loading to true when starting to fetch data
+      try {
+        const { properties, totalCount } = await getData(`properties?${query}`);
+        setProperties(properties);
+        setTotalCount(totalCount);
 
-      // Fetch all locations data
-      const allLocations = await getData('locations');
+        const allLocations = await getData('locations');
 
-      // Filter for towns based on the current location
-      let towns = [];
-      const city = allLocations.cities.find((loc) => loc.slug.toLowerCase() === location.toLowerCase());
+        let towns = [];
+        const city = allLocations.cities.find((loc) => loc.slug.toLowerCase() === location.toLowerCase());
 
-      if (city) {
-        towns = city.towns;
-      } else {
-        allLocations.cities.forEach((loc) => {
-          const town = loc.towns.find((town) => town.slug.toLowerCase() === location.toLowerCase());
-          if (town) {
-            towns = loc.towns;
-          }
-        });
+        if (city) {
+          towns = city.towns;
+        } else {
+          allLocations.cities.forEach((loc) => {
+            const town = loc.towns.find((town) => town.slug.toLowerCase() === location.toLowerCase());
+            if (town) {
+              towns = loc.towns;
+            }
+          });
+        }
+
+        setFilteredTowns(towns);
+
+        let cachedCompanies = JSON.parse(localStorage.getItem("companies"));
+
+        if (!cachedCompanies) {
+          cachedCompanies = await getData(`companies`);
+          localStorage.setItem("companies", JSON.stringify(cachedCompanies));
+        }
+
+        setCompanies(cachedCompanies);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        // Handle error state here if needed
+      } finally {
+        setIsLoading(false); // Set loading to false when data fetching is complete
       }
-
-      setFilteredTowns(towns);
-
-      // Check if companies data is already stored in local storage
-      let cachedCompanies = JSON.parse(localStorage.getItem("companies"));
-
-      if (!cachedCompanies) {
-        // If not, fetch the companies data from the API
-        cachedCompanies = await getData(`companies`);
-        // Store the fetched companies data in local storage
-        localStorage.setItem("companies", JSON.stringify(cachedCompanies));
-      }
-
-      // Set companies state
-      setCompanies(cachedCompanies);
     }
 
     fetchData();
-  }, [query, location]); // Dependency array includes query and location to re-fetch data when search params change
+  }, [query, location]);
 
   const categoryObj = {
     title: location || "Search Results",
@@ -97,18 +96,20 @@ export default function Search({ searchParams }) {
     properties,
   };
 
+  if (isLoading) {
+    return <Loading />; // Display the Loading component when data is being fetched
+  }
+
+ 
+
   return (
     <div>
-      {properties && companies && (
-        <div>
-          <FilterComponent
-            category={categoryObj}
-            companies={companies}
-            similarLocations={filteredTowns} 
-            properties={properties}
-          />
-        </div>
-      )}
+      <FilterComponent
+        category={categoryObj}
+        companies={companies}
+        similarLocations={filteredTowns} 
+        properties={properties}
+      />
     </div>
   );
 }

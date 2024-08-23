@@ -23,16 +23,16 @@ const CompanyCard = ({image, description, title, slug, phone}) => {
           </div>
         </div>
         <h3 className="font-heading mb-3 text-lg font-semibold border-b border-gray-200 text-center">{title}</h3>
-        <div className="flex gap-2 border-b border-gray-200 ">
+        {/* <div className="flex gap-2 border-b border-gray-200 ">
             <Phone className="p-1 text-gray-900"/>
             <p className="mb-2 text-blue-900 ">{phone}</p>
-        </div>
+        </div> */}
         
         
-        <p className="mb-4 text-gray-600 ">{truncateText(description, 10)}</p>
+        {/* <p className="mb-4 text-gray-600 ">{truncateText(description, 10)}</p> */}
 
         <Link
-          className="inline-flex flex-wrap items-center justify-center px-5 py-2 text-sm text-center text-neutral-50 hover:text-neutral-100 bg-slate-600 hover:bg-opacity-95 rounded-lg focus:ring-4 focus:ring-neutral-400"
+          className="inline-flex flex-wrap items-center justify-center px-5 py-2 text-sm text-center text-gray-800 hover:bg-slate-200 bg-slate-200/20 hover:bg-opacity-95 rounded-lg focus:ring-4 focus:ring-neutral-400"
           href={`/companies/${slug}`}
         >
           <span className="mr-3 font-medium">View Full Profile</span>

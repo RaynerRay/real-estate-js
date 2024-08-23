@@ -68,7 +68,7 @@ import { Heart, MapPin, Bed, Bath, Move } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const PropertyCard = ({ title,slug, price, address, beds, baths, size, tags, imageUrl }) => {
+const PropertyCard = ({ title, slug, salePrice, rentPrice, address, beds, baths, size, imageUrl }) => {
   return (
     <div className="box-dream border p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
       <Link href={`/properties/${slug}`}>
@@ -80,23 +80,35 @@ const PropertyCard = ({ title,slug, price, address, beds, baths, size, tags, ima
             </span>
           ))}
         </div> */}
-        <div className="absolute top-2 right-2">
-          <Heart className="text-red-500 w-6 h-6" />
-        </div>
+       
         
         <div className="h-64 bg-gray-300">
           <Image height={500} width={500} src={imageUrl} alt="" className="w-full h-64 object-cover" />
         </div>
       </div>
       <div className="content mt-4">
+        
         <div className="head flex justify-between items-center">
-          <div className="title font-semibold text-lg text-gray-700">{title}</div>
-          <div className="price text-lg font-semibold text-green-600">{price}</div>
+          <div className="title font-semibold text-md text-gray-700">{title}</div>
+        
+          <p className="text-sm font-semibold text-green-900">
+                  ${""}
+                  {rentPrice
+                    ? `${rentPrice.toLocaleString()}/month`
+                    : salePrice.toLocaleString()}
+                </p>
         </div>
+        <div className="flex justify-between">
         <div className="location mt-2 flex items-center text-gray-500">
           <MapPin className="w-4 h-4 mr-2 text-gray-800" />
           <p>{address}</p>
+        
         </div>
+        {/* <div className="">
+          <Heart className="text-red-500 w-6 h-6" />
+        </div> */}
+        </div>
+        
         <div className="icon-box mt-4 flex justify-between text-gray-500">
           <div className="item flex items-center">
             <Bed className="w-4 h-4 mr-2 text-gray-800" />

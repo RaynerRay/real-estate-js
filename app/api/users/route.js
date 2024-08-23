@@ -92,6 +92,17 @@ export async function GET(request) {
       orderBy: {
         createdAt: "desc",
       },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        emailVerified: true,
+        role: true,
+        status: true,
+        createdAt: true,
+        updatedAt: true,
+        agentProfile: true,  
+      },
     });
     return NextResponse.json(users);
   } catch (error) {

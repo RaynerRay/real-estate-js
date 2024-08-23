@@ -7,6 +7,9 @@ export async function GET(request, { params: { id } }) {
       where: {
         id,
       },
+      include: {
+        properties: true,
+      },
     });
     return NextResponse.json(company);
   } catch (error) {

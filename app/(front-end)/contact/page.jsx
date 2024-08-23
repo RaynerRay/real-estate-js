@@ -5,7 +5,7 @@ import Link from 'next/link';
 const page = () => {
   return (
     <div>
-      <div id="page-banner-area" className="page-banner bg-teal-900 text-white py-12">
+      <div id="page-banner-area" className="page-banner bg-green-900 text-white py-12">
         <div className="page-banner-title text-center">
           <h2 className="text-3xl font-bold">Contact Us</h2>
           <Link href={"/"} className="flex items-center justify-center my-4">
@@ -30,16 +30,16 @@ const page = () => {
                 </p>
                 <div className="contact-right">
                   <div className="single-contact flex items-center mb-4">
-                    <MapPin className="text-gray-50 mr-4  bg-lime-500 p-1" />
-                    <p>63130 St. York Blvd, Los Angeles, US</p>
+                    <MapPin className="text-gray-50 mr-4  bg-green-800 p-1" />
+                    <p>63130 St. York, Harare, Zimbabwe</p>
                   </div>
                   <div className="single-contact flex items-center mb-4">
-                    <Mail className="text-gray-50 mr-4  bg-lime-500 p-1" />
+                    <Mail className="text-gray-50 mr-4  bg-green-800 p-1" />
                     <p><a href="mailto:Feedback@property.com">Feedback@property.com</a></p>
                   </div>
                   <div className="single-contact flex items-center mb-4">
-                    <Phone className="text-gray-50 mr-4  bg-lime-500 p-1" />
-                    <p><a href="tel:+1234567478">+1-234-567-478</a></p>
+                    <Phone className="text-gray-50 mr-4  bg-green-800 p-1" />
+                    <p><a href="tel:+1234567478">+263-774-340-505</a></p>
                   </div>
                 </div>
                 <div className="social-icon flex space-x-4 mt-6">
@@ -94,7 +94,7 @@ const page = () => {
                   ></textarea>
                 </div>
                 <div className="form-submit">
-                  <button type="submit" className="btn bg-lime-500 hover:bg-lime-600 text-white font-semibold rounded-lg py-2 px-4 flex items-center">
+                  <button type="submit" className="btn bg-green-800 hover:bg-green-800 text-white font-semibold rounded-lg py-2 px-4 flex items-center">
                     <i className="fa fa-paper-plane mr-2" aria-hidden="true"></i> Send Message
                   </button>
                   <div id="msgSubmit" className="h3 text-center hidden"></div>

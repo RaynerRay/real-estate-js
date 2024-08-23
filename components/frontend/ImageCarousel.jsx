@@ -11,7 +11,7 @@ export function ImageCarousel({images}) {
       <Carousel slide={false}>
         {images.map((image, i) => (
          
-            <Image key={i} height={800} width={800}className="relative" src={image} alt="..." />
+            <Image key={i} height={1000} width={1000} className="object-fit" src={image} alt="..." />
           )
         )}
       </Carousel>

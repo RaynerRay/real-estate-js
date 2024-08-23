@@ -119,7 +119,7 @@ export default function SearchandFilters() {
   }, [suggestionBoxRef]);
 
   return (
-    <div className="p-4 bg-white rounded shadow-lg relative">
+    <div className="p-4 bg-white/30 rounded shadow-lg relative">
       <form
         className="space-y-4 max-w-6xl mx-auto"
         onSubmit={handleSubmit(handleSearch)}
@@ -159,9 +159,9 @@ export default function SearchandFilters() {
     <select
       {...register("offer")}
       className="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-      required
+      
     >
-      <option value="">Sale or Rent</option>
+      <option value="">Choose For Sale or Rent</option>
       <option value="SALE">For Sale</option>
       <option value="RENT">For Rent</option>
     </select>
@@ -204,7 +204,7 @@ export default function SearchandFilters() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-gray-900">
             {/* Minimum Beds */}
             <div>
-              <p className="mb-2">Choose Minimum Beds</p>
+              <p className="mb-2 text-gray-300 font-bold">Choose Minimum Beds</p>
               <select
                 {...register("minBeds")}
                 className="w-full p-2 border rounded"
@@ -220,7 +220,7 @@ export default function SearchandFilters() {
 
             {/* Maximum Beds */}
             <div>
-              <p className="mb-2">Choose Maximum Beds</p>
+              <p className="mb-2 text-gray-300 font-bold">Choose Maximum Beds</p>
               <select
                 {...register("maxBeds")}
                 className="w-full p-2 border rounded"
@@ -236,7 +236,7 @@ export default function SearchandFilters() {
 
             {/* Minimum Price */}
             <div>
-              <p className="mb-2">Choose Minimum Price</p>
+              <p className="mb-2 text-gray-300 font-bold">Choose Minimum Price</p>
               <select
                 {...register("minPrice")}
                 className="w-full p-2 border rounded"
@@ -256,7 +256,7 @@ export default function SearchandFilters() {
 
             {/* Maximum Price */}
             <div>
-              <p className="mb-2">Choose Maximum Price</p>
+              <p className="mb-2 text-gray-300 font-bold">Choose Maximum Price</p>
               <select
                 {...register("maxPrice")}
                 className="w-full p-2 border rounded"
@@ -276,7 +276,7 @@ export default function SearchandFilters() {
 
             {/* Baths */}
             <div>
-              <p className="mb-2">Baths</p>
+              <p className="mb-2 text-gray-300 font-bold">Baths</p>
               <select
                 {...register("baths")}
                 className="w-full p-2 border rounded"

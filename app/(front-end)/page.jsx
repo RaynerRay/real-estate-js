@@ -7,8 +7,7 @@ import React from 'react'
 import FeaturedBrands from '@/components/frontend/FeaturedBrands'
 import { getData } from '@/lib/getData'
 import NewsHome from '@/components/frontend/home/NewsHome'
-import { authOptions } from '@/lib/authOptions'
-import { getServerSession } from 'next-auth'
+
 import { Adverts } from '@/components/frontend/Adverts'
 
 const page = async() => {
@@ -16,7 +15,7 @@ const page = async() => {
   const towns = await getData("towns");
   const adverts = await getData("adverts");
   const properties = await getData("properties");
-  const session = await getServerSession(authOptions);
+
   return (
     <div >
         <div className="">
