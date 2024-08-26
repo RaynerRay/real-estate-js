@@ -161,7 +161,7 @@ export default function SearchandFilters() {
       className="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
       
     >
-      <option value="">Choose For Sale or Rent</option>
+      <option value="">Property Type</option>
       <option value="SALE">For Sale</option>
       <option value="RENT">For Rent</option>
     </select>

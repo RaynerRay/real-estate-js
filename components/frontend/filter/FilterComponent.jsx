@@ -28,9 +28,9 @@ export default function FilterComponent({ category, properties, companies, simil
     
     <div>
       
-       <div className={`${isScrolled ? "fixed top-0 left-0 w-full z-50" : ""}`}>
+       {/* <div className={`${isScrolled ? "fixed top-0 left-0 w-full z-50" : ""}`}> */}
         <SearchAndFilters />
-      </div>
+      {/* </div> */}
       <div className="bg-white space-y-6 text-slate-900 py-8 px-4 ">
         <Breadcrumb title={title} resultCount={propertyCount} />
         {/* <Sorting isSearch={category?.isSearch} title={title} slug={slug} /> */}
