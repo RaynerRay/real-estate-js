@@ -35,8 +35,10 @@ const FilteredProperties = ({
         {properties.map((property) => (
           <PropertyCard
             key={property.id}
+            propertyId={property.id}
             title={property.title}
-            price={property.price}
+            rentPrice={property.rentPrice}
+            salePrice={property.salePrice}
             address={property.address}
             beds={property.beds}
             baths={property.baths}

@@ -13,6 +13,7 @@ export default async function Layout({ children }) {
   return (
     <div>
       <Navbar isLoggedIn={!!session} userName={userName} />
+      
       <div className="max-w-8xl mx-auto">{children}</div>
       <Footer />
     </div>

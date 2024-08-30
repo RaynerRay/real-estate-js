@@ -7,7 +7,7 @@ const CallToAction = () => {
     <section className="py-12 lg:py-24">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center mb-14 md:mb-20">
-          <h1 className="font-heading text-2xl sm:text-4xl mb-6">Why Choose Us?</h1>
+          <h1 className="font-heading text-xl sm:text-2xl mb-6">Why Choose Us?</h1>
           <p className="text-md mx-4 text-gray-700">
             Discover the advantages of buying, renting, or selling properties with our platform. Our tailored services ensure you get the best deals with maximum convenience.
           </p>
