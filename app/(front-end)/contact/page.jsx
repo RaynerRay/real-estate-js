@@ -35,7 +35,7 @@ const page = () => {
                   </div>
                   <div className="single-contact flex items-center mb-4">
                     <Mail className="text-gray-50 mr-4  bg-green-800 p-1" />
-                    <p><a href="mailto:Feedback@property.com">Feedback@property.com</a></p>
+                    <p><a href="mailto:Feedback@property.com">info@markethub.com</a></p>
                   </div>
                   <div className="single-contact flex items-center mb-4">
                     <Phone className="text-gray-50 mr-4  bg-green-800 p-1" />
