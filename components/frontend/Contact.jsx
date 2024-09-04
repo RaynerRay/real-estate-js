@@ -34,11 +34,11 @@ const ContactPage = () => {
                   </div>
                   <div className="single-contact flex items-center mb-4">
                     <Mail className="text-gray-600 mr-4" />
-                    <p><a href="mailto:Feedback@property.com">Feedback@property.com</a></p>
+                    <p><a href="mailto:Feedback@property.com">info@markethub.com</a></p>
                   </div>
                   <div className="single-contact flex items-center mb-4">
                     <Phone className="text-gray-600 mr-4" />
-                    <p><a href="tel:+1234567478">+1-234-567-478</a></p>
+                    <p><a href="tel:+1234567478">+263 772 340 505</a></p>
                   </div>
                 </div>
                 <div className="social-icon flex space-x-4 mt-6">
@@ -114,91 +114,7 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <footer id="footer" className="footer-area section-padding bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap">
-            <div className="w-full lg:w-3/12 md:w-6/12 mb-8 lg:mb-0 px-4">
-              <h3 className="footer-title text-xl font-semibold mb-4">About <span className="text-lime-500">Us</span></h3>
-              <ul className="footer-link">
-                <li className="mb-2"><a href="#">Company</a></li>
-                <li className="mb-2"><a href="#">Team</a></li>
-                <li className="mb-2"><a href="#">Career</a></li>
-                <li className="mb-2"><a href="#">Graphic Design</a></li>
-                <li className="mb-2"><a href="#">Documentation</a></li>
-              </ul>
-            </div>
-            <div className="w-full lg:w-3/12 md:w-6/12 mb-8 lg:mb-0 px-4">
-              <h3 className="footer-title text-xl font-semibold mb-4">Useful <span className="text-lime-500">Links</span></h3>
-              <ul className="footer-link">
-                <li className="mb-2"><a href="#">Bayonne, New York</a></li>
-                <li className="mb-2"><a href="#">Greenville, Chicago</a></li>
-                <li className="mb-2"><a href="#">The Heights, New Jersey</a></li>
-                <li className="mb-2"><a href="#">Bayonne, Washington DC</a></li>
-                <li className="mb-2"><a href="#">Greenville, San Francisco</a></li>
-              </ul>
-            </div>
-            <div className="w-full lg:w-3/12 md:w-6/12 mb-8 lg:mb-0 px-4">
-              <h3 className="footer-title text-xl font-semibold mb-4">Contact <span className="text-lime-500">Info</span></h3>
-              <ul className="address">
-                <li className="mb-2">
-                  <a href="#" className="flex items-center">
-                    <MapPin className="mr-2" /> York Blvd, Los Angeles, US<br /> View, CA 94041USA
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a href="#" className="flex items-center">
-                    <Phone className="mr-2" /> (518) 2014-040 43
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a href="mailto:hello@example.com" className="flex items-center">
-                    <Mail className="mr-2" /> hello@example.com
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="w-full lg:w-3/12 md:w-6/12 mb-8 lg:mb-0 px-4">
-              <h3 className="footer-title text-xl font-semibold mb-4">Subscribe <span className="text-lime-500">on Our News</span></h3>
-              <form method="post" id="subscribe-form" name="subscribe-form" className="validate mb-4">
-                <div className="flex items-center">
-                  <input
-                    type="email"
-                    name="Email"
-                    className="form-control w-full px-4 py-2 border border-gray-300 rounded-l-lg"
-                    id="EMAIL"
-                    placeholder="Email address"
-                    required
-                  />
-                  <button
-                    type="submit"
-                    name="subscribe"
-                    id="subscribes"
-                    className="btn bg-lime-500 hover:bg-lime-600 text-white font-semibold rounded-r-lg py-2 px-4"
-                  >
-                    <Mail />
-                  </button>
-                </div>
-              </form>
-              <div className="social-icon flex space-x-4">
-                <a className="facebook" href="#"><Facebook /></a>
-                <a className="twitter" href="#"><Twitter /></a>
-                <a className="instagram" href="#"><Instagram /></a>
-                <a className="linkedin" href="#"><Linkedin /></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      <section id="copyright" className="bg-gray-800 text-gray-500 py-4">
-        <div className="container mx-auto px-4 text-center">
-          <p>Copyright © 2024 <a rel="nofollow" href="https://uideck.com" className="text-lime-500">UIdeck</a> All Right Reserved</p>
-        </div>
-      </section>
-
-      <a href="#" className="back-to-top fixed bottom-4 right-4 bg-lime-500 hover:bg-lime-600 text-white p-2 rounded-full">
-        <ChevronRight className="transform rotate-90" />
-      </a>
+      
     </div>
   );
 };

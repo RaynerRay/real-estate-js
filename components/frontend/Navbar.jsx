@@ -50,7 +50,7 @@ const Navbar = ({ isLoggedIn = false, userName = "User" }) => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
           <Link className="inline-block mb-4" href="/">
-                <Image className="block " src="/logo.png" alt="Logo" width={150} height={150} />
+                <Image className="block " src="/logo.png" alt="Logo" width={170} height={170} />
               </Link>
             {/* <Link href="/">
               <div className="text-gray-900 text-3xl font-bold leading-none">
@@ -69,7 +69,7 @@ const Navbar = ({ isLoggedIn = false, userName = "User" }) => {
               <Link
                   target="_blank"
                   href="https://wa.me/0772340505?text=Hi,%20I%20want%20to%20rent%20out%20a%20property"
-                  className="inline-block text-green-800 bg-yellow-200 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-yellow-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition duration-300 ease-in-out"
+                  className="inline-block text-gray-700 bg-gray-200 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-yellow-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition duration-300 ease-in-out"
                 >
                   List Your Property
                 </Link>
@@ -103,17 +103,17 @@ const Navbar = ({ isLoggedIn = false, userName = "User" }) => {
             ) : (
               <>
                 <Link href="/login">
-                  <span className="inline-block text-gray-900 bg-gray-200 hover:bg-green-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition duration-300 ease-in-out mr-2">
+                  <span className="inline-block text-gray-800 bg-gray-200 hover:bg-green-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition duration-300 ease-in-out mr-2">
                     Sign in
                   </span>
                 </Link>
-                <Link
+                {/* <Link
                   target="_blank"
                   href="https://wa.me/0772340505?text=Hi,%20I%20want%20to%20rent%20out%20a%20property"
                   className="inline-block text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition duration-300 ease-in-out"
                 >
                   List Your Property
-                </Link>
+                </Link> */}
               </>
             )}
           </div>
