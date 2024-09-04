@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import PropertyCard from './PropertyCard';
 import Loading from '@/app/loading';
 import { Heart } from 'lucide-react';
+import Link from 'next/link';
 
 const FavoritesPage = ({session}) => {
   const [favorites, setFavorites] = useState([]);
@@ -59,7 +60,7 @@ const FavoritesPage = ({session}) => {
           <div className="text-center py-16 bg-white rounded-lg shadow-md">
             <Heart className="mx-auto text-pink-500 mb-4" size={48} />
             <p className="text-xl text-gray-700">
-              You haven't added any properties to your favorites yet.
+              You have np properties in your favorites yet.
             </p>
             <p className="mt-2 text-gray-500">
               Start exploring and save the homes that catch your eye!
