@@ -30,6 +30,7 @@ import {
   Music,
   PenLine,
   PersonStanding,
+  PersonStandingIcon,
   ScanSearch,
   SendToBack,
   Slack,
@@ -45,38 +46,24 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { usePathname, useRouter } from "next/navigation";
-// import { signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 export default function Sidebar({ showSidebar, setShowSidebar }) {
   const [openMenu, setOpenMenu] = useState(false);
-  // const router = useRouter();
-  // const { data: session, status } = useSession();
+  const router = useRouter();
+  const { data: session, status } = useSession();
 
-  // if (status === "loading") {
-  //   return <p>Loading...</p>;
-  // }
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
   const role = 'ADMIN'
-  // session?.user?.role;
+  session?.user?.role;
   const userStatus = true
-  // session?.user?.status || false;
+  session?.user?.status || false;
 
   const pathname = usePathname();
   let sidebarLinks = [
-    // {
-    //   title: "Customers",
-    //   icon: Users2,
-    //   href: "/dashboard/customers",
-    // },
-    // {
-    //   title: "Markets",
-    //   icon: Warehouse,
-    //   href: "/dashboard/markets",
-    // },
-    // {
-    //   title: "Properties",
-    //   icon: HouseIcon  ,
-    //   href: "/dashboard/properties",
-    // },
+
     {
       title: "Resources",
       icon: Book,
@@ -88,21 +75,12 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
       href: "/dashboard/agents",
     },
   
-    // {
-    //   title: "Our Staff",
-    //   icon: User,
-    //   href: "/dashboard/staff",
-    // },
     {
       title: "Blog",
       icon: PenLine ,
       href: "/dashboard/blogs",
     },
-    // {
-    //   title: "Wallet",
-    //   icon: CircleDollarSign,
-    //   href: "/dashboard/wallet",
-    // },
+   
     {
       title: "Support",
       icon: HeartHandshake,
@@ -159,16 +137,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
   ];
   if (role === "AGENT") {
     sidebarLinks = [
-      {
-        title: "Songs",
-        icon: Truck,
-        href: "/dashboard/songs",
-      },
-      {
-        title: "Albums",
-        icon: CircleDollarSign,
-        href: "/dashboard/albums",
-      },
+      
       {
         title: "Profile",
         icon: CircleDollarSign,
@@ -212,7 +181,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
       // },
       {
         title: "Profile",
-        icon: Truck,
+        icon: PersonStandingIcon,
         href: "/dashboard/profile",
       },
       {
@@ -252,7 +221,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
           href="/dashboard"
           className={
             pathname === "/dashboard"
-              ? "flex items-center space-x-3 px-6 py-2 border-l-8 border-lime-500 text-lime-500"
+              ? "flex items-center space-x-3 px-6 py-2 border-l-8 border-green-500 text-green-500"
               : "flex items-center space-x-3 px-6 py-2 "
           }
         >
@@ -284,7 +253,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
                     href={item.href}
                     className={
                       pathname === item.href
-                        ? "flex items-center space-x-3 py-1 text-sm   text-lime-500"
+                        ? "flex items-center space-x-3 py-1 text-sm   text-green-500"
                         : "flex items-center space-x-3  py-1 "
                     }
                   >
@@ -306,7 +275,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
               href={item.href}
               className={
                 item.href == pathname
-                  ? "flex items-center space-x-3 px-6 py-2 border-l-8 border-lime-500 text-lime-500"
+                  ? "flex items-center space-x-3 px-6 py-2 border-l-8 border-green-500 text-green-500"
                   : "flex items-center space-x-3 px-6 py-2 "
               }
             >
@@ -318,7 +287,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
         <div className="px-6 py-2">
           <button
             onClick={handleLogout}
-            className="bg-lime-600 rounded-md flex items-center space-x-3 px-6 py-3"
+            className="bg-green-800 rounded-md flex items-center text-white space-x-3 px-6 py-3"
           >
             <LogOut />
             <span>Logout</span>

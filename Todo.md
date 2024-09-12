@@ -20,7 +20,7 @@ garage in property
 
 ## Edit Contact Details
 
-## add favourites
+## add favourites to property detailed
 ## add dashboard auth
 
 
