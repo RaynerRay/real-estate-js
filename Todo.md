@@ -23,4 +23,6 @@ garage in property
 ## add favourites to property detailed
 ## add dashboard auth
 
+##fix uploadthing to production
+
 

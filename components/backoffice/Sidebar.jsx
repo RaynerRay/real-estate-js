@@ -52,18 +52,16 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
   const [openMenu, setOpenMenu] = useState(false);
   const router = useRouter();
   const { data: session, status } = useSession();
+  const pathname = usePathname();
 
   if (status === "loading") {
     return <p>Loading...</p>;
   }
-  const role = 'ADMIN'
-  session?.user?.role;
-  const userStatus = true
-  session?.user?.status || false;
 
-  const pathname = usePathname();
+  const role = session?.user?.role || 'ADMIN';
+  const userStatus = session?.user?.status || false;
+
   let sidebarLinks = [
-
     {
       title: "Resources",
       icon: Book,
@@ -74,49 +72,42 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
       icon: PersonStanding,
       href: "/dashboard/agents",
     },
-  
     {
       title: "Blog",
-      icon: PenLine ,
+      icon: PenLine,
       href: "/dashboard/blogs",
     },
-   
     {
       title: "Support",
       icon: HeartHandshake,
       href: "/dashboard/support",
     },
-    // {
-    //   title: "Settings",
-    //   icon: LayoutGrid,
-    //   href: "/dashboard/settings",
-    // },
     {
       title: "Home",
       icon: ExternalLink,
       href: "/",
     },
   ];
+
   let catalogueLinks = [
-   
     {
       title: "Categories",
-      icon: FolderDot ,
+      icon: FolderDot,
       href: "/dashboard/categories",
     },
     {
       title: "SubCategories",
-      icon: FolderArchiveIcon ,
+      icon: FolderArchiveIcon,
       href: "/dashboard/subcategories",
     },
     {
       title: "Companies",
-      icon: BriefcaseBusiness ,
+      icon: BriefcaseBusiness,
       href: "/dashboard/companies",
     },
     {
       title: "Properties",
-      icon: House ,
+      icon: House,
       href: "/dashboard/properties",
     },
     {
@@ -135,9 +126,9 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
       href: "/dashboard/adverts",
     },
   ];
+
   if (role === "AGENT") {
     sidebarLinks = [
-      
       {
         title: "Profile",
         icon: CircleDollarSign,
@@ -148,37 +139,15 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
         icon: HeartHandshake,
         href: "/dashboard/support",
       },
-      // {
-      //   title: "Settings",
-      //   icon: LayoutGrid,
-      //   href: "/dashboard/settings",
-      // },
       {
         title: "Home",
         icon: ExternalLink,
         href: "/",
       },
     ];
-    catalogueLinks = [
-      // {
-      //   title: "Profile",
-      //   icon: Boxes,
-      //   href: "/dashboard/products",
-      // },
-      // {
-      //   title: "Messages",
-      //   icon: ScanSearch,
-      //   href: "/dashboard/favourites",
-      // },
-    ];
-  }
-  if (role === "USER") {
+    catalogueLinks = [];
+  } else if (role === "USER") {
     sidebarLinks = [
-      // {
-      //   title: "My Orders",
-      //   icon: Truck,
-      //   href: "/dashboard/orders",
-      // },
       {
         title: "Profile",
         icon: PersonStandingIcon,
@@ -191,21 +160,22 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
       },
     ];
     catalogueLinks = [];
-  }
-  if (role === "ADMIN" && userStatus === false) {
+  } else if (role === "ADMIN" && userStatus === false) {
     sidebarLinks = [];
     catalogueLinks = [];
   }
+
   async function handleLogout() {
     await signOut();
     router.push("/");
   }
+
   return (
     <div
       className={
         showSidebar
-          ? "sm:block mt-20 sm:mt-0 dark:bg-slate-800 bg-white space-y-6 w-64 h-screen text-slate-800 dark:text-slate-300  fixed left-0 top-0 shadow-md overflow-y-scroll"
-          : " mt-20 sm:mt-0 hidden sm:block dark:bg-slate-800 bg-white space-y-6 w-64 h-screen text-slate-800 dark:text-slate-300  fixed left-0 top-0 shadow-md overflow-y-scroll"
+          ? "sm:block mt-20 sm:mt-0 dark:bg-slate-800 bg-white space-y-6 w-64 h-screen text-slate-800 dark:text-slate-300 fixed left-0 top-0 shadow-md overflow-y-scroll"
+          : "mt-20 sm:mt-0 hidden sm:block dark:bg-slate-800 bg-white space-y-6 w-64 h-screen text-slate-800 dark:text-slate-300 fixed left-0 top-0 shadow-md overflow-y-scroll"
       }
     >
       <Link
@@ -215,14 +185,14 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
       >
         {/* <Image src={logo} alt="limifood logo" className="w-36" /> */}
       </Link>
-      <div className="space-y-3 flex flex-col  ">
+      <div className="space-y-3 flex flex-col">
         <Link
           onClick={() => setShowSidebar(false)}
           href="/dashboard"
           className={
             pathname === "/dashboard"
               ? "flex items-center space-x-3 px-6 py-2 border-l-8 border-green-500 text-green-500"
-              : "flex items-center space-x-3 px-6 py-2 "
+              : "flex items-center space-x-3 px-6 py-2"
           }
         >
           <LayoutGrid />
@@ -234,7 +204,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
               className=""
               onClick={() => setOpenMenu(!openMenu)}
             >
-              <button className="flex items-center space-x-6  py-2 ">
+              <button className="flex items-center space-x-6 py-2">
                 <div className="flex items-center space-x-3">
                   <Slack />
                   <span>Catalogue</span>
@@ -253,8 +223,8 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
                     href={item.href}
                     className={
                       pathname === item.href
-                        ? "flex items-center space-x-3 py-1 text-sm   text-green-500"
-                        : "flex items-center space-x-3  py-1 "
+                        ? "flex items-center space-x-3 py-1 text-sm text-green-500"
+                        : "flex items-center space-x-3 py-1"
                     }
                   >
                     <Icon className="w-4 h-4" />
@@ -276,7 +246,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
               className={
                 item.href == pathname
                   ? "flex items-center space-x-3 px-6 py-2 border-l-8 border-green-500 text-green-500"
-                  : "flex items-center space-x-3 px-6 py-2 "
+                  : "flex items-center space-x-3 px-6 py-2"
               }
             >
               <Icon />
