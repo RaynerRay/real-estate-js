@@ -11,7 +11,7 @@ export default async function VerifyMail({ searchParams }) {
     <div className="max-w-2xl mx-auto min-h-screen mt-8">
       <div
         id="alert-additional-content-1"
-        className="p-4 mb-4 text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+        className="p-4 mb-4 text-red-800 border border-gray-600 rounded-lg bg-hray-580 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
         role="alert"
       >
         <div className="flex items-center">

@@ -16,17 +16,17 @@ export default function Summary({ agentId }) {
   const onboardingFormData = useSelector(
     (store) => store.onboarding.onboardingFormData
   );
-  const currentStep = useSelector((store) => store.checkout.currentStep);
+  // const currentStep = useSelector((store) => store.checkout.currentStep);
   const dispatch = useDispatch();
-  function handlePrevious() {
-    dispatch(setCurrentStep(currentStep - 1));
-  }
+  // function handlePrevious() {
+  //   dispatch(setCurrentStep(currentStep - 1));
+  // }
   async function submitData() {
     const data = {
       ...onboardingFormData,
     };
     const fullName = `${data.firstName} ${data.lastName}`;
-    const code = generateUserCode("LFF", fullName);
+    const code = generateUserCode("MH", fullName);
     data.code = code;
     data.userId = agentId;
     console.log(data);
@@ -49,7 +49,7 @@ export default function Summary({ agentId }) {
       </div>
       <div className="mt-4 flex items-center justify-between">
         <button
-          onClick={handlePrevious}
+          // onClick={handlePrevious}
           type="button"
           className="inline-flex items-center px-6 py-3 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-slate-900 rounded-lg focus:ring-4 focus:ring-lime-200 dark:focus:ring-lime-900 hover:bg-slate-800 dark:bg-lime-600 dark:hover:bg-lime-700"
         >

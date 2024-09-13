@@ -15,9 +15,9 @@ import {
 export default function AdditionalInformationForm() {
   const [imageUrl, setImageUrl] = useState("");
   const currentStep = useSelector((store) => store.onboarding.currentStep);
-  const existingFormData = useSelector(
-    (store) => store.checkout.checkoutFormData
-  );
+  // const existingFormData = useSelector(
+  //   (store) => store.checkout.checkoutFormData
+  // );
   const {
     register,
     reset,
@@ -25,9 +25,9 @@ export default function AdditionalInformationForm() {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: {
-      ...existingFormData,
-    },
+    // defaultValues: {
+    //   ...existingFormData,
+    // },
   });
 
   const dispatch = useDispatch();
