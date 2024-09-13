@@ -9,7 +9,7 @@ export async function POST(request) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
     //extract the credentials
-    const { name, email, password, role, plan } = await request.json();
+    const { name, email, password, role} = await request.json();
     //Check if the user Already exists in the db
     const existingUser = await db.user.findUnique({
       where: {
@@ -39,7 +39,6 @@ export async function POST(request) {
         email,
         password: hashedPassword,
         role,
-        plan,
         verificationToken: token,
       },
     });
