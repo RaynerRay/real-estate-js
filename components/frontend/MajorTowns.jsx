@@ -2,11 +2,11 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const MajorTowns = ({towns}) => {
-  const filteredHarare = towns.filter(town => town.cityId === "66a65df5b2641dc363030580");
-  const filteredBulawayo = towns.filter(town => town.cityId === "66a53854c9664ccf029f8a0b");
-  const filteredGweru = towns.filter(town => town.cityId === "66ac95bebf8c9a3cbd124a10");
-  const filteredMutare = towns.filter(town => town.cityId === "66a65dffb2641dc363030581");
-  const filteredMasvingo = towns.filter(town => town.cityId === "12345");
+  const filteredHarare = towns.filter(town => town.cityId === "66e434256be7abfba21e59d8");
+  const filteredBulawayo = towns.filter(town => town.cityId === "66e434386be7abfba21e59d9");
+  const filteredGweru = towns.filter(town => town.cityId === "66e434406be7abfba21e59da");
+  const filteredMutare = towns.filter(town => town.cityId === "66e434486be7abfba21e59db");
+  const filteredMasvingo = towns.filter(town => town.cityId === "66e434506be7abfba21e59dc");
   return (
     <section className="px-8 md:px-24 py-16  bg-gray-50">
       <div className="max-w-6xl mx-auto">
