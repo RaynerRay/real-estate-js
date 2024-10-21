@@ -1,7 +1,5 @@
-'use client';
-
+'use client'
 import React, { useState, useEffect } from 'react';
-// import { useSession } from 'next-auth/react';
 import PropertyCard from './PropertyCard';
 import Loading from '@/app/loading';
 import { Heart } from 'lucide-react';
@@ -10,7 +8,6 @@ import Link from 'next/link';
 const FavoritesPage = ({session}) => {
   const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const { data: session } = useSession();
 
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -25,23 +22,27 @@ const FavoritesPage = ({session}) => {
           }
         } catch (error) {
           console.error('Error fetching favorites:', error);
-        } finally {
-          setIsLoading(false);
         }
       }
+      setIsLoading(false);
     };
 
     fetchFavorites();
   }, [session]);
 
   if (isLoading) {
-    return <div>
-      <Loading />
-    </div>;
+    return <div><Loading /></div>;
   }
 
   if (!session) {
-    return <div>Please log in to view your favorites. <Link href="/login" className="text-blue-500"> Login here</Link></div>;
+    return (
+      <div className="text-center py-16">
+        <p className="text-xl text-gray-700 mb-10">Please log in to view your favorites.</p>
+        <Link href="/login" className="text-sky-500 font-semibold rounded-md border border-sky-500 py-3 px-2 hover:bg-sky-600 hover:text-white">
+          Click here to Login 
+        </Link>
+      </div>
+    );
   }
 
   return (
@@ -60,7 +61,7 @@ const FavoritesPage = ({session}) => {
           <div className="text-center py-16 bg-white rounded-lg shadow-md">
             <Heart className="mx-auto text-pink-500 mb-4" size={48} />
             <p className="text-xl text-gray-700">
-              You have np properties in your favorites yet.
+              You have no properties in your favorites yet.
             </p>
             <p className="mt-2 text-gray-500">
               Start exploring and save the homes that catch your eye!

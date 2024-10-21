@@ -45,7 +45,7 @@ const Footer = () => {
                   <a className="inline-block font-medium text-gray-900 hover:text-yellow-500" href="/terms-and-conditions">Terms & Conditions</a>
                 </li>
                 <li>
-                  <a className="inline-block font-medium text-gray-900 hover:text-yellow-500" href="privacy-policy">Privacy Policy</a>
+                  {/* <a className="inline-block font-medium text-gray-900 hover:text-yellow-500" href="privacy-policy">Privacy Policy</a> */}
                 </li>
               </ul>
             </div>

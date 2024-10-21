@@ -8,11 +8,11 @@ const MajorTowns = ({towns}) => {
   const filteredMutare = towns.filter(town => town.cityId === "66e434486be7abfba21e59db");
   const filteredMasvingo = towns.filter(town => town.cityId === "66e434506be7abfba21e59dc");
   return (
-    <section className="px-8 md:px-24 py-16  bg-gray-50">
+    <section className="px-8 md:px-24 py-16  bg-white">
       <div className="max-w-6xl mx-auto">
       <div className="flex mb-16 ">
         <div className="w-full md:w-3/4">
-        <h1 className="font-heading text-xl sm:text-3xl ">Popular areas</h1>
+        <h1 className="font-heading text-xl sm:text-3xl ">Popular Areas</h1>
           {/* <h1 className="tracking-tight font-heading text-2xl md:text-3xl font-normal max-w-lg">Popular areas in Zimbabwe</h1> */}
         </div>
         <div className="w-full md:w-1/4 ">

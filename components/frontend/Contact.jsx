@@ -30,7 +30,7 @@ const ContactPage = () => {
                 <div className="contact-right">
                   <div className="single-contact flex items-center mb-4">
                     <MapPin className="text-gray-600 mr-4" />
-                    <p>63130 St. York Blvd, Los Angeles, US</p>
+                    <p>61 Prices Avenue, Mt Pleasant, Harare</p>
                   </div>
                   <div className="single-contact flex items-center mb-4">
                     <Mail className="text-gray-600 mr-4" />

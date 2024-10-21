@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 const CallToAction = () => {
   return (
-    <section className="py-12 lg:py-24">
-      <div className="container max-w-6xl mx-auto px-4">
+    <section className="mb-8">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center mb-14 md:mb-20">
           <h1 className="font-heading text-xl sm:text-2xl mb-6">Why Choose Us?</h1>
           <p className="text-md mx-4 text-gray-700">

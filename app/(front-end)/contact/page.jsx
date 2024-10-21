@@ -31,11 +31,11 @@ const page = () => {
                 <div className="contact-right">
                   <div className="single-contact flex items-center mb-4">
                     <MapPin className="text-gray-50 mr-4  bg-green-800 p-1" />
-                    <p>63130 St. York, Harare, Zimbabwe</p>
+                    <p>61 Prices Avenue, Mt Pleasant, Harare, Zimbabwe</p>
                   </div>
                   <div className="single-contact flex items-center mb-4">
                     <Mail className="text-gray-50 mr-4  bg-green-800 p-1" />
-                    <p><a href="mailto:Feedback@property.com">info@markethub.com</a></p>
+                    <p><a href="mailto:Feedback@property.com">info@markethub.co.zw</a></p>
                   </div>
                   <div className="single-contact flex items-center mb-4">
                     <Phone className="text-gray-50 mr-4  bg-green-800 p-1" />

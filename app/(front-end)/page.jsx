@@ -24,13 +24,15 @@ const page = async() => {
         {/* <Hero /> */}
         <Hero2 />
         
+        
+        { properties && <FeaturedProperties properties={properties} /> }
         {towns && <MajorTowns towns={towns} /> }
         {/* <FeaturedBrands /> */}
         <FeaturedCategories />
         <Adverts adverts={adverts} />
         </div>
         
-        { properties && <FeaturedProperties properties={properties} /> }
+        
         <div className="">
         <CallToAction />
        {blogs &&  <NewsHome blogs={blogs} /> }

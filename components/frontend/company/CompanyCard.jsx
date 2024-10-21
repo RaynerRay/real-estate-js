@@ -17,10 +17,10 @@ const CompanyCard = ({image, description, title, slug, phone}) => {
 
     <div className="w-full sm:w-1/2 lg:w-1/4 p-3">
       <div className="p-6 pb-7 h-full bg-white border rounded-xl">
-        <div className="relative flex justify-center items-center mb-5 h-32 bg-neutral-100 overflow-hidden rounded-md">
-          <div className="absolute flex items-center justify-center bg-white w-20 h-20 rounded-full">
-            <Image height={800} width={800} src={image} alt={title} />
-          </div>
+        <div className="relative flex justify-center items-center mb-5 h-32  overflow-hidden rounded-md">
+          {/* <div className="absolute flex items-center justify-center bg-white w-20 h-20 rounded-full"> */}
+            <Image height={200} width={200} src={image} alt={title} className=' object-cover' />
+          {/* </div> */}
         </div>
         <h3 className="font-heading mb-3 text-lg font-semibold border-b border-gray-200 text-center">{title}</h3>
         {/* <div className="flex gap-2 border-b border-gray-200 ">
@@ -35,7 +35,7 @@ const CompanyCard = ({image, description, title, slug, phone}) => {
           className="inline-flex flex-wrap items-center justify-center px-5 py-2 text-sm text-center text-gray-800 hover:bg-slate-200 bg-slate-200/20 hover:bg-opacity-95 rounded-lg focus:ring-4 focus:ring-neutral-400"
           href={`/companies/${slug}`}
         >
-          <span className="mr-3 font-medium">View Full Profile</span>
+          <span className="mr-3 font-medium">Full Profile</span>
           <svg
             width="16"
             height="16"

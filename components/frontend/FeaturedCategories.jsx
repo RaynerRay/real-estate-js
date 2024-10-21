@@ -4,8 +4,10 @@ import React from "react";
 
 const FeaturedCategories = () => {
   return (
-    <div className="max-w-6xl mx-auto my-8 py-4">
-        <h1 className="font-heading text-xl sm:text-2xl mb-6">Popular Categories</h1>
+    <div className="bg-gray-50">
+
+    <div className="max-w-6xl mx-auto my-8 py-8 ">
+      <h1 className="font-heading text-xl sm:text-3xl ">Popular Categories</h1>
           {/* <h1 className="font-heading text-xl my-8 text-center"></h1> */}
     
     <div className="m-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 py-8">
@@ -27,6 +29,7 @@ const FeaturedCategories = () => {
           {/* <label className="text-gray-500">{items.total}</label> */}
         </Link>
       ))}
+    </div>
     </div>
     </div>
   );
