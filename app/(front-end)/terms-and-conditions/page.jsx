@@ -10,7 +10,7 @@ const TermsAndConditions = () => {
       <section className="mb-6 mt-16">
         <h4 className="text-lg font-semibold mb-2">INTRODUCTION</h4>
         <p className="mb-2">
-        MarketHub Zimbabwe (Pvt) Ltd ("MarketHub") hosts a website under the domain name www.markethub.co.zw ("the Website") for the online marketing of property listings for sale or for rent and the advertising of service providers in the real estate, legal, and related industries (collectively “Advertisements”).
+        MarketHub Zimbabwe (Pvt) Ltd (&quot;MarketHub&quot;) hosts a website under the domain name www.markethub.co.zw (&quot;the Website&quot;) for the online marketing of property listings for sale or for rent and the advertising of service providers in the real estate, legal, and related industries (collectively &ldquo;Advertisements&rdquo;).
         </p>
         <p className="mb-2">Markethub may amend these standard terms and conditions (&quot;STC&apos;s&quot;) at any time without prior notice.</p>
         <p className="mb-2">These Website Standard Terms and Conditions written on this webpage shall manage your use of the website. By using this Website, you agree to accept all terms and conditions.</p>
@@ -18,7 +18,7 @@ const TermsAndConditions = () => {
       
       <section className="mb-6">
         <h4 className="text-lg font-semibold mb-2">APPLICATION TO CLIENTS</h4>
-        <p className="mb-2">These STC's are applicable together with the signed agreement ("the Contract") concluded between MarketHub and each client who advertises on the Website ("Client").</p>
+        <p className="mb-2">These STC&apos;s are applicable together with the signed agreement (&quot;the Contract&quot;) concluded between MarketHub and each client who advertises on the Website (&quot;Client&quot;).</p>
         <p className="mb-2">If there is any discrepancy or conflict between these STC&apos;s and the Contract, the provisions of the Contract will apply.</p>
       </section>
       
@@ -85,22 +85,12 @@ const TermsAndConditions = () => {
         <p className="mb-2">In this clause, a &quot;Direct Marketing Contract&quot; is any contract, including an upgrade of or an extension of a contract, concluded between a Client and MarketHub as a direct result of a request or approach by MarketHub either in person or by mail or electronic communication.</p>
         <p className="mb-2">If a Direct Marketing Contract is concluded, the Client may cancel that contract, without reason or penalty, by giving MarketHub written notice within 5 (five) business days after:</p>
         <ul className="list-disc ml-6 mb-2">
-          <li>The later of the date on which the Client concludes the contract or the date on which the Client receives a copy of the contract; or</li>
-          <li>If MarketHub is required by law to deliver any goods or perform any services within a specified period, the date on which MarketHub is required to deliver the goods or perform the services.</li>
+          <li>The later of the date on which the Client agreed to enter into the Direct Marketing Contract or the date on which MarketHub has complied with its obligations to provide the Client with a copy of the contract (including these STC&apos;s); or</li>
+          <li>The date on which the Client received delivery of the products or services purchased under the Direct Marketing Contract.</li>
         </ul>
-        <p className="mb-2">MarketHub will not, however, be required to refund to the Client any amounts paid for:</p>
-        <ul className="list-disc ml-6 mb-2">
-          <li>Services, if the Client expressly required MarketHub to begin performance of those services during the 5 (five) business day period referred to above and MarketHub commenced such services; or</li>
-          <li>Goods, if the goods concerned have been opened, partially consumed, or disassembled by the Client.</li>
-        </ul>
-      </section>
-      
-      <section className="mb-6">
-        <h4 className="text-lg font-semibold mb-2">LIMITATION OF LIABILITY</h4>
-        <p className="mb-2">MarketHub and its directors, employees, and agents will not be liable for any damage, loss, or liability of whatsoever nature arising from the use or inability to use the Website or the services or content provided from and through the Website. Furthermore, MarketHub makes no representations or warranties, implied or otherwise, that the content and technology available from the Website are free from errors or omissions and that the service will be uninterrupted and error-free. Users are encouraged to report any possible malfunctions and errors to MarketHub.</p>
       </section>
     </div>
   );
-}
+};
 
 export default TermsAndConditions;
